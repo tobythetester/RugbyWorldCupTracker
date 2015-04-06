@@ -8,7 +8,7 @@ var fs = require('/usr/local/lib/node_modules/file-system');
 describe('Check Status of Tickets', function() {
 
     var list = [
-        {matchName:"ENGLAND V WALES", matchID:16, numberOfTicketsUnavailable:5},
+        {matchName:"ENGLAND V WALES", matchID:16, numberOfTicketsUnavailable:6},
         {matchName:"ENGLAND V FIJI", matchID:1, numberOfTicketsUnavailable:5},
         //{matchName:"ENGLAND V AUSTRALIA", matchID:26, numberOfTicketsUnavailable:5},
         //{matchName:"ENGLAND V URUGUAY", matchID:36, numberOfTicketsUnavailable:5},
