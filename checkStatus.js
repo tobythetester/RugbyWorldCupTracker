@@ -8,11 +8,11 @@ var fs = require('/usr/local/lib/node_modules/file-system');
 describe('Check Status of Tickets', function() {
 
     var list = [
-        {matchName:"ENGLAND V WALES", matchID:16, numberOfTicketsUnavailable:5},
-        {matchName:"ENGLAND V FIJI", matchID:1, numberOfTicketsUnavailable:5},
+        {matchName:"ENGLAND V WALES", matchID:16, numberOfTicketsUnavailable:6},
+        {matchName:"ENGLAND V FIJI", matchID:1, numberOfTicketsUnavailable:6},
         {matchName:"ENGLAND V AUSTRALIA", matchID:26, numberOfTicketsUnavailable:5},
         {matchName:"ENGLAND V URUGUAY", matchID:36, numberOfTicketsUnavailable:5},
-        //{matchName:"WALES V URUGUAY", matchID:7, numberOfTicketsUnavailable:2},
+        ////{matchName:"WALES V URUGUAY", matchID:7, numberOfTicketsUnavailable:2},
         {matchName:"AUSTRALIA V WALES", matchID:35, numberOfTicketsUnavailable:5},
         {matchName:"FINAL", matchID:48, numberOfTicketsUnavailable:5},
         {matchName:"QF4: W POOL A V RU POOL B", matchID:44, numberOfTicketsUnavailable:5},
