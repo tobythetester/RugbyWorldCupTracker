@@ -1,3 +1,3 @@
 # RugbyWorldCupTracker
 
-This is a tracker
+This is a tracker.
