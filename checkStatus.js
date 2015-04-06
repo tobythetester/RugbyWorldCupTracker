@@ -8,17 +8,17 @@ var fs = require('/usr/local/lib/node_modules/file-system');
 describe('Check Status of Tickets', function() {
 
     var list = [
-        {matchName:"ENGLAND V WALES", matchID:16, numberOfTicketsUnavailable:6},
+        {matchName:"ENGLAND V WALES", matchID:16, numberOfTicketsUnavailable:5},
         {matchName:"ENGLAND V FIJI", matchID:1, numberOfTicketsUnavailable:5},
-        //{matchName:"ENGLAND V AUSTRALIA", matchID:26, numberOfTicketsUnavailable:5},
-        //{matchName:"ENGLAND V URUGUAY", matchID:36, numberOfTicketsUnavailable:5},
-        ////{matchName:"WALES V URUGUAY", matchID:7, numberOfTicketsUnavailable:2},
-        //{matchName:"AUSTRALIA V WALES", matchID:35, numberOfTicketsUnavailable:5},
-        //{matchName:"FINAL", matchID:48, numberOfTicketsUnavailable:5},
-        //{matchName:"QF4: W POOL A V RU POOL B", matchID:44, numberOfTicketsUnavailable:5},
-        //{matchName:"QF1: W POOL B V RU POOL A", matchID:42, numberOfTicketsUnavailable:5},
-        //{matchName:"SF1: W QF1 V W QF2", matchID:45, numberOfTicketsUnavailable:5},
-        //{matchName:"SF2: W QF3 V W QF4", matchID:46, numberOfTicketsUnavailable:5},
+        {matchName:"ENGLAND V AUSTRALIA", matchID:26, numberOfTicketsUnavailable:5},
+        {matchName:"ENGLAND V URUGUAY", matchID:36, numberOfTicketsUnavailable:5},
+        //{matchName:"WALES V URUGUAY", matchID:7, numberOfTicketsUnavailable:2},
+        {matchName:"AUSTRALIA V WALES", matchID:35, numberOfTicketsUnavailable:5},
+        {matchName:"FINAL", matchID:48, numberOfTicketsUnavailable:5},
+        {matchName:"QF4: W POOL A V RU POOL B", matchID:44, numberOfTicketsUnavailable:5},
+        {matchName:"QF1: W POOL B V RU POOL A", matchID:42, numberOfTicketsUnavailable:5},
+        {matchName:"SF1: W QF1 V W QF2", matchID:45, numberOfTicketsUnavailable:5},
+        {matchName:"SF2: W QF3 V W QF4", matchID:46, numberOfTicketsUnavailable:5},
     ];
 
         it('should login', function () {
@@ -68,7 +68,7 @@ describe('Check Status of Tickets', function() {
                     }
                     else {
                         console.log(list[index].matchName + " TICKETS SOLD OUT. " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE");
-                        fs.appendFile('/Users/Shared/Jenkins/Home/workspace/RugbyWorldCupTicketChecker/ticketStatus.html', list[index].matchName + " TICKETS ON SALE!!! " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE" + "<br>", function(err) {})
+                        fs.appendFile('/Users/Shared/Jenkins/Home/workspace/RugbyWorldCupTicketChecker/ticketStatus.html', list[index].matchName + " TICKETS SOLD OUT. " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE" + "<br>", function(err) {})
                     }
 
                 }).bind(null, i));
