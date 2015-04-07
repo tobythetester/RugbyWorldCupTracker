@@ -66,11 +66,11 @@ describe('Check Status of Tickets', function() {
 
                     console.log(list[index].matchName + " TICKETS ON SALE!!! " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE")
                     fs.appendFile
-                    fs.appendFile('/Users/Shared/Jenkins/Home/workspace/RugbyWorldCupTicketChecker/ticketStatus.html', list[index].matchName + " TICKETS ON SALE!!! " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE" + "<br>", function(err) {})
+                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + " TICKETS ON SALE!!! " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE" + "<br>", function(err) {})
                 }
                 else {
                     console.log(list[index].matchName + " TICKETS SOLD OUT. " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE");
-                    fs.appendFile('/Users/Shared/Jenkins/Home/workspace/RugbyWorldCupTicketChecker/ticketStatus.html', list[index].matchName + " TICKETS SOLD OUT. " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE" + "<br>", function(err) {})
+                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + " TICKETS SOLD OUT. " + "THERE ARE " + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE" + "<br>", function(err) {})
                 }
 
             }).bind(null, i));
