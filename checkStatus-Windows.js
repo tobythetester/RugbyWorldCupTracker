@@ -3,7 +3,7 @@
  * carmel2304@hotmail.com dyoung@uclan.ac.uk
  */
 
-var fs = require('C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\file-system');
+var fs = require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/file-system');
 
 describe('Check Status of Tickets', function() {
 
