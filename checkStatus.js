@@ -5,6 +5,17 @@
 
 var fs = require('/usr/local/lib/node_modules/file-system');
 
+var currentdate = new Date();
+var datetime = "Last Ticket Check: " + currentdate.getDate() + "/"
+    + (currentdate.getMonth()+1)  + "/"
+    + currentdate.getFullYear() + " @ "
+    + currentdate.getHours() + ":"
+    + currentdate.getMinutes() + ":"
+    + currentdate.getSeconds();
+
+fs.appendFile("/Users/Shared/Jenkins/Home/workspace/RugbyWorldCupTicketChecker/ticketStatus.html", "TIME: " + datetime + "<br>", function(err) {})
+
+
 describe('Check Status of Tickets', function() {
 
     var list = [
