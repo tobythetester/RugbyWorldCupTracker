@@ -5,15 +5,9 @@
 
 var fs = require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/file-system');
 
-var currentdate = new Date();
-var datetime = "Last Ticket Check: " + currentdate.getDate() + "/"
-    + (currentdate.getMonth()+1)  + "/"
-    + currentdate.getFullYear() + " @ "
-    + currentdate.getHours() + ":"
-    + currentdate.getMinutes() + ":"
-    + currentdate.getSeconds();
+var d = new Date();
 
-fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + datetime + "<br>", function(err) {})
+fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + d + "<br>", function(err) {})
 
 describe('Check Status of Tickets', function() {
 
