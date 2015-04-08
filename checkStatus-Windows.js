@@ -4,33 +4,11 @@
  */
 
 var fs = require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/file-system');
+var moment = require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/moment');
 
-function getDateTime() {
+var time = moment().format('MMMM Do YYYY, h:mm:ss a');
 
-    var date = new Date();
-
-    var hour = date.getHours();
-    hour = (hour < 10 ? "0" : "") + hour;
-
-    var min  = date.getMinutes();
-    min = (min < 10 ? "0" : "") + min;
-
-    var sec  = date.getSeconds();
-    sec = (sec < 10 ? "0" : "") + sec;
-
-    var year = date.getFullYear();
-
-    var month = date.getMonth() + 1;
-    month = (month < 10 ? "0" : "") + month;
-
-    var day  = date.getDate();
-    day = (day < 10 ? "0" : "") + day;
-
-    return year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec;
-
-}
-
-fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + getDateTime() + "<br>", function(err) {})
+fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + time + "<br>", function(err) {})
 
 describe('Check Status of Tickets', function() {
 
