@@ -69,12 +69,12 @@ describe('Check Status of Tickets', function() {
                 if (count < numberOfTicketsUnavailable) {
 
 
-                    console.log(list[index].matchName + ": "  + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE")
-                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong> " +  numberOfTicketsAvailable + "</strong>" + " TICKET CATEGORIES AVAILABLE" + "<br>", function(err) {})
+                    console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS")
+                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong> " +  numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
                 }
                 else {
-                    console.log(list[index].matchName + ": "  + numberOfTicketsAvailable + " TICKET CATEGORIES AVAILABLE");
-                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong>"  + numberOfTicketsAvailable + "</strong>" + " TICKET CATEGORIES AVAILABLE" + "<br>", function(err) {})
+                    console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS");
+                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong>"  + numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
                 }
 
             }).bind(null, i));
