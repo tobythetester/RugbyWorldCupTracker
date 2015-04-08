@@ -8,7 +8,7 @@ var moment = require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/mo
 
 var time = moment().format('MMMM Do YYYY, h:mm:ss a');
 
-fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + time + "<br>", function(err) {})
+fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", "<br>", function(err) {})
 
 describe('Check Status of Tickets', function() {
 
