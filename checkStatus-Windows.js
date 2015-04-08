@@ -8,8 +8,6 @@ var fs = require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/file-s
 var today = new Date();
 today.toDateString();
 
-today = mm+'/'+dd+'/'+yyyy;
-
 fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + today.toDateString() + "<br>", function(err) {})
 
 describe('Check Status of Tickets', function() {
