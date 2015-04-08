@@ -5,9 +5,22 @@
 
 var fs = require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/file-system');
 
-var d = new Date();
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
 
-fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + d + "<br>", function(err) {})
+if(dd<10) {
+    dd='0'+dd
+}
+
+if(mm<10) {
+    mm='0'+mm
+}
+
+today = mm+'/'+dd+'/'+yyyy;
+
+fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + today + "<br>", function(err) {})
 
 describe('Check Status of Tickets', function() {
 
