@@ -6,9 +6,9 @@
 var fs = require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/file-system');
 
 var today = new Date();
-today.toDateString();
+today.getDay();
 
-fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + today.toDateString() + "<br>", function(err) {})
+fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", + today + "<br>", function(err) {})
 
 describe('Check Status of Tickets', function() {
 
