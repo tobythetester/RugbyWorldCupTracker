@@ -75,20 +75,18 @@ describe('Check Status of Tickets', function() {
                     fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong> " +  numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
 
                     //get cats
-                    element.all(by.css('.trigger.woggle>legend')).getText().then((function (index, text){
+                    element.all(by.css('.trigger.woggle>legend')).getText().then((function (index, index, text){
 
                         console.log(text);
 
                         fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", text, function(err) {})
 
-                    }).bind(null, i));
-
-                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong> " +  numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
+                    }).bind(null, i, i));
 
                 }
                 else {
 
-                    //tickets on sale
+                    //tickets sold out
                     console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS");
                     fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong>"  + numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
                 }
