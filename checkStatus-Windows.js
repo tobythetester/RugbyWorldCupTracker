@@ -68,8 +68,15 @@ describe('Check Status of Tickets', function() {
 
                 if (count < numberOfTicketsUnavailable) {
 
-                    //tickets sold out
-                    console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS")
+                    //tickets on sale
+                    console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS");
+
+                    //get cats
+                    element.all(by.css('.trigger.woggle>legend')).getText().then((function (index, text){
+
+                        console.log(text);
+                    }).bind(null, i));
+
                     fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong> " +  numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
 
                 }
@@ -78,7 +85,6 @@ describe('Check Status of Tickets', function() {
                     //tickets on sale
                     console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS");
                     fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong>"  + numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
-
                 }
 
             }).bind(null, i));
