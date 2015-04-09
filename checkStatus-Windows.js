@@ -24,6 +24,7 @@ describe('Check Status of Tickets', function() {
         {matchName:"QF1: W POOL B V RU POOL A", matchID:42, numberOfTicketsUnavailable:5},
         {matchName:"SF1: W QF1 V W QF2", matchID:45, numberOfTicketsUnavailable:5},
         {matchName:"SF2: W QF3 V W QF4", matchID:46, numberOfTicketsUnavailable:5},
+        {matchName:"AUSTRALIA v FIJI", matchID:16, numberOfTicketsUnavailable:4},
     ];
 
     it('should login', function () {
