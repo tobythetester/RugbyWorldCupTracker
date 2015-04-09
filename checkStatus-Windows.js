@@ -74,14 +74,14 @@ describe('Check Status of Tickets', function() {
 
                     fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong> " +  numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
 
-                    //get cats
-                    element.all(by.css('.trigger.woggle>legend')).getText().then((function (index, index, text){
-
-                        console.log(text);
-
-                        fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", text, function(err) {})
-
-                    }).bind(null, i, i));
+                    ////get cats
+                    //element.all(by.css('.trigger.woggle>legend')).getText().then((function (index, index, text){
+                    //
+                    //    console.log(text);
+                    //
+                    //    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", text, function(err) {})
+                    //
+                    //}).bind(null, i, i));
 
                 }
                 else {
