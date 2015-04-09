@@ -24,7 +24,6 @@ describe('Check Status of Tickets', function() {
         {matchName:"QF1: W POOL B V RU POOL A", matchID:42, numberOfTicketsUnavailable:5},
         {matchName:"SF1: W QF1 V W QF2", matchID:45, numberOfTicketsUnavailable:5},
         {matchName:"SF2: W QF3 V W QF4", matchID:46, numberOfTicketsUnavailable:5},
-        {matchName:"AUSTRALIA v FIJI", matchID:16, numberOfTicketsUnavailable:4},
     ];
 
     it('should login', function () {
@@ -69,24 +68,11 @@ describe('Check Status of Tickets', function() {
 
                 if (count < numberOfTicketsUnavailable) {
 
-                    //tickets on sale
-                    console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS");
 
+                    console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS")
                     fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong> " +  numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
-
-                    ////get cats
-                    //element.all(by.css('.trigger.woggle>legend')).getText().then((function (index, index, text){
-                    //
-                    //    console.log(text);
-                    //
-                    //    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", text, function(err) {})
-                    //
-                    //}).bind(null, i, i));
-
                 }
                 else {
-
-                    //tickets sold out
                     console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS");
                     fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong>"  + numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
                 }
