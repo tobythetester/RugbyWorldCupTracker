@@ -24,6 +24,7 @@ describe('Check Status of Tickets', function() {
         {matchName:"QF1: W POOL B V RU POOL A", matchID:42, numberOfTicketsUnavailable:5},
         {matchName:"SF1: W QF1 V W QF2", matchID:45, numberOfTicketsUnavailable:5},
         {matchName:"SF2: W QF3 V W QF4", matchID:46, numberOfTicketsUnavailable:5},
+        {matchName:"AUSTRALIA v FIJI", matchID:10, numberOfTicketsUnavailable:4},
     ];
 
     it('should login', function () {
@@ -62,25 +63,18 @@ describe('Check Status of Tickets', function() {
 
             var numberOfTickets = element.all(by.css('.unavailable'));
 
-            element.all(by.css('.unavailable')).count().then((function (index, count) {
-
-                var numberOfTicketsAvailable = (numberOfTicketsUnavailable - count);
-
-                if (count < numberOfTicketsUnavailable) {
-
-                    console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS")
-                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong> " +  numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
-                }
-                else {
-                    console.log(list[index].matchName + ": " + numberOfTicketsAvailable + " TICKETS");
-                    fs.appendFile("C:/Program Files (x86)/Jenkins/workspace/RugbyWorldCupTracker/ticketStatus.html", list[index].matchName + ": <strong>"  + numberOfTicketsAvailable + "</strong>" + " TICKETS" + "<br>", function(err) {})
-                }
-
-            }).bind(null, i));
-
             element.all(by.css('.trigger.woggle>legend')).getText().then((function (index, text){
 
                 console.log(text);
+
+                if(text.length > 1){
+                    fs.appendFile('/Users/Shared/Jenkins/Home/workspace/RugbyWorldCupTicketChecker/ticketStatus.html', list[index].matchName + ": " + "<br>", function(err) {})
+                    fs.appendFile('/Users/Shared/Jenkins/Home/workspace/RugbyWorldCupTicketChecker/ticketStatus.html', text + "<br>", function(err) {})
+                }
+                else{
+                    fs.appendFile('/Users/Shared/Jenkins/Home/workspace/RugbyWorldCupTicketChecker/ticketStatus.html', list[index].matchName + ": NO TICKETS " + "<br>", function(err) {})
+                }
+
             }).bind(null, i));
 
             expect(numberOfTickets.count()).toEqual(list[i].numberOfTicketsUnavailable);
